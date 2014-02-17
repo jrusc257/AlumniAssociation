@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Map</title>
+<link type="text/css" rel="stylesheet" href="styles/main.css">
+<script>
+document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+    function onSuccess(position) {
+        var element = document.getElementById('coordinates');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          +                                   position.timestamp          + '<br />';
+    }
+	function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+</script>
+</head>
+
+<body>
+    <div id="navigation">
+        <a href="index.html"><div class="button">Home</div></a>
+    </div>
+    <div id="map">
+        <img src="images/UniversityWisconsinStevensPointOldMainHall.jpg" />
+    </div>
+    <div id="coordinates">
+    	Coordinates
+    </div>
+    <div class="history">
+        <h1>Old Main</h1>
+        Old Main is the cornerstone of life at University of 
+        Wisconsin-Stevens Point. In its early years, it housed all of the 
+        classrooms and administrative offices; it was truly the center of 
+        campus. Now only a portion remains of the building Old Main 
+        used to be, but she still has a spark that will continue to glow as 
+        long as the campus bustles with life and learning.
+    </div>
+</body>
+</html>
