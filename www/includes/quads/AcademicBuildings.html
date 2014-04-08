@@ -1,0 +1,38 @@
+<style>
+	img[usemap] {
+		border: none;
+		height: auto;
+		width: 100%;
+		max-width:100%;
+	}
+</style>
+
+<script type="text/javascript" charset="utf-8" src="scripts/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="scripts/jquery.rwdImageMaps.min.js"></script>
+
+<script>
+onDeviceReady();
+
+function onDeviceReady() {
+    $('img[usemap]').rwdImageMaps();
+};
+</script>
+
+
+<div id="header">Academic Buildings</div>
+<div id="image"><img src="images/Academic_Buildings.jpg" width="694" height="750" border="0" usemap="#AcademicBuildings" />
+  <map name="AcademicBuildings">
+  <area shape="rect" coords="2,2,153,95" onclick="ajaxGet('601.html')">
+    <area shape="rect" coords="215,12,652,243" onclick="ajaxGet('HEC.html')">
+    <area shape="rect" coords="164,260,265,408" onclick="ajaxGet('CCC.html')">
+    <area shape="rect" coords="274,308,375,437" onclick="ajaxGet('CPS.html')">
+    <area shape="rect" coords="389,266,654,457" onclick="ajaxGet('ScienceBldg.html')">
+    <area shape="rect" coords="330,458,581,558" onclick="ajaxGet('TNR.html')">
+    <area shape="rect" coords="170,559,419,730" onclick="ajaxGet('NFAC.html')">
+    <area shape="rect" coords="506,584,625,724" onclick="ajaxGet('LRC.html')">
+  </map>
+</div>
+<div id="content">
+	<p>click into buildings</p>
+    <a class="button" onclick="onDeviceReady()">fire mapper</a>
+</div>

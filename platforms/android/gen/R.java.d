@@ -6,4 +6,5 @@ C:\Phonegap\Workspace\AlumniAssociation\platforms\android\res\drawable-mdpi\icon
 C:\Phonegap\Workspace\AlumniAssociation\platforms\android\res\drawable-xhdpi\icon.png \
 C:\Phonegap\Workspace\AlumniAssociation\platforms\android\res\values\strings.xml \
 C:\Phonegap\Workspace\AlumniAssociation\platforms\android\res\xml\config.xml \
+C:\Phonegap\Workspace\AlumniAssociation\platforms\android\res\xml\plugins.xml \
 C:\Phonegap\Workspace\AlumniAssociation\platforms\android\bin\AndroidManifest.xml \

@@ -21,24 +21,27 @@ body{
 }
 #map img{
 	width:100%;
-	border-top:#652681 7px solid;
-	border-bottom:#652681 7px solid;
+	border-top:#652681 4px solid;
+	border-bottom:#652681 4px solid;
 	margin:20px 0;
 }
 .button{
 	padding:10px;
-	font-size:18px;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	border-radius: 20px;
+	font-size:8px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
 	background-color:#652681;
 	color:white;
 	text-decoration:none;
 	text-align:center;
-	width:110px;
+	width:50px;
 }
 #navigation{
-	padding:20px;
+	padding:10px;
+	z-index:20;
+	position:fixed;
+	bottom:0;
 }
 #navigation div{
 	display:inline-block;
@@ -52,17 +55,28 @@ body{
 	color:#652681;
 }
 #header{
-	padding:20px;
-	font-size:20px;
+	padding:10px;
+	font-size:12px;
 	text-align:center;
+}
+#image{
+	border-top:#652681 4px solid;
+	border-bottom:#652681 4px solid;
+	margin:10px 0;
 }
 #image img{
 	width:100%;
-	border-top:#652681 7px solid;
-	border-bottom:#652681 7px solid;
-	margin:20px 0;
+	height:auto;
 }
-#content{
-	padding:20px;
-	font-size:16px;
+img[usemap] {
+	border: none;
+	height: auto;
+	width: 100%;
+	max-width:100%;
+}
+#locInfo{
+	font-size:8px;
+}
+#content, #navigation{
+	padding:10px;
 }

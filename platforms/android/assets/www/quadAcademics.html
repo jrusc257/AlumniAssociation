@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> 
+<title>UWSP Tour</title>
+
+<script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        
+    <title>Get Location</title>
+	<link type="text/css" rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="scripts/jquery.rwdImageMaps.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/locations.js"></script>
+
+<script>
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    $('img[usemap]').rwdImageMaps();
+};
+</script>
+
+<div id="locInfo">
+    <div id="header">Academic Buildings</div>
+    <div id="image"><img src="images/Academic_Buildings.jpg" width="694" height="750" border="0" usemap="#AcademicBuildings" />
+      <map name="AcademicBuildings">
+      <area shape="rect" coords="2,2,153,95" onClick="ajaxGet('601.html')">
+      <area shape="rect" coords="164,260,265,408" onClick="ajaxGet('CCC.html')">
+        <area shape="rect" coords="274,308,375,437" onClick="ajaxGet('CPS.html')">
+        <area shape="rect" coords="389,266,654,457" onClick="ajaxGet('ScienceBldg.html')">
+        <area shape="rect" coords="330,458,581,558" onClick="ajaxGet('TNR.html')">
+        <area shape="rect" coords="170,559,419,730" onClick="ajaxGet('NFAC.html')">
+        <area shape="rect" coords="506,584,625,724" onClick="ajaxGet('LRC.html')">
+        <area shape="rect" coords="225,17,652,226" onClick="ajaxGet('Science.html')">
+      </map>
+    </div>
+    <div id="content">
+        <p>click into buildings</p>
+    </div>
+</div>
+</body>
+</html>

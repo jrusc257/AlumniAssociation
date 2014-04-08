@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> 
+<title>UWSP Tour</title>
+
+<script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        
+    <title>Get Location</title>
+	<link type="text/css" rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="scripts/jquery.rwdImageMaps.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/locations.js"></script>
+
+<script>
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    $('img[usemap]').rwdImageMaps();
+};
+</script>
+
+<div id="locInfo">
+    <div id="header">DUC and Administration Buildings</div>
+    <div id="image"><img src="images/DUC_Administration.jpg" width="520" height="892" border="0" usemap="#Map" />
+      <map name="Map">
+        <area shape="poly" coords="73,274,272,273,272,192,229,186,210,90,70,89" onClick="ajaxGet('DUC.html')">
+        <area shape="rect" coords="70,275,180,399" onClick="ajaxGet('CCC.html')">
+        <area shape="rect" coords="182,278,281,405" onClick="ajaxGet('SServices.html')">
+        <area shape="rect" coords="106,422,244,507" onClick="ajaxGet('OldMain.html')">
+        <area shape="rect" coords="309,482,402,604" onClick="ajaxGet('Nelson.html')">
+		<area shape="rect" coords="227,48,266,175" onClick="ajaxGet('Delzel.html')">
+      <area shape="rect" coords="303,698,372,828" onClick="ajaxGet('Hyer.html')">
+      </map>
+  </div>
+    <div id="content">
+        <p>click into buildings</p>
+    </div>
+</div>
+</body>
+</html>
