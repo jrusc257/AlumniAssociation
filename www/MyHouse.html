@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
         <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323--> 
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=low-dpi" /> 
 <title>UWSP Tour</title>
 
@@ -17,25 +17,27 @@
     <script type="text/javascript" charset="utf-8" src="scripts/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="scripts/jquery.rwdImageMaps.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="scripts/locations.js"></script>
-    <script type="text/javascript" charset="utf-8">
 
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false)
+<script>
+document.addEventListener("deviceready", onDeviceReady, false);
 
-    function onDeviceReady() {
-        geoRefresh();
-    };
+function onDeviceReady() {
+    $('img[usemap]').rwdImageMaps();
+	window.addEventListener("orientationchange", orientationChange, true);
+	initOrientation();
+};
+</script>
 
-    </script>
-  </head>
-  <body>
-      <div id="locInfo">
-      	<div id="loading"><img src="images/GPS.gif" /></div>
-      </div>
-      <div id="navigation">
+<div id="locInfo">
+    <div id="header">This is my house.  For development purposes only</div>
+	<div id="image"><img src="images/NFAC.jpg" /></div>
+    <div id="content">
+        <p>j kaskl sjkl skl as k s jklsaj k sj/ sjj klasj kfsjkf sklf jsklaj klsdj fl sjfkls jklfj al;fj;asfjkl;asd fjkldsj fsjfklsjklfj asklfj sklj fklsj fkljsklf jdsklj fkldsjflkdsaj ksjk askl fjlas fdskljf ladsfjkl d fklsdklfadsj l</p>
+    </div>
+    <div id="navigation">
         <a href="index.html" class="button">Home</a>
         <a onClick="geoRefresh()" class="button">Refresh</a>
-      </div>
-  </body>
+    </div>
+</div>
+</body>
 </html>

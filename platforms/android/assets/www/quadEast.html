@@ -23,6 +23,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     $('img[usemap]').rwdImageMaps();
+	window.addEventListener("orientationchange", orientationChange, true);
 };
 </script>
 
@@ -39,6 +40,10 @@ function onDeviceReady() {
     </div>
     <div id="content">
         <p>click into buildings</p>
+    </div>
+    <div id="navigation">
+        <a href="index.html" class="button">Home</a>
+        <a onClick="geoRefresh()" class="button">Refresh</a>
     </div>
 </div>
 </body>

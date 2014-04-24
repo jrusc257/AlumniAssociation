@@ -3,7 +3,7 @@
 <meta charset="utf-8">
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> 
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=low-dpi" /> 
 <title>UWSP Tour</title>
 
 <script type="text/javascript" src="phonegap.js"></script>
@@ -23,6 +23,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     $('img[usemap]').rwdImageMaps();
+	window.addEventListener("orientationchange", orientationChange, true);
+	orientationChange();
 };
 </script>
 
@@ -42,6 +44,10 @@ function onDeviceReady() {
     </div>
     <div id="content">
         <p>click into buildings</p>
+    </div>
+    <div id="navigation">
+        <a href="index.html" class="button">Home</a>
+        <a onClick="geoRefresh()" class="button">Refresh</a>
     </div>
 </div>
 </body>
