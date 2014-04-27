@@ -10,7 +10,55 @@
 
 <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript">
+		
             app.initialize();
+			document.addEventListener("deviceready", onDeviceReady, false);
+		
+			// Populate the database 
+			//
+			function populateDB(tx) {
+				tx.executeSql('DROP TABLE IF EXISTS DEMO');
+				tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
+				tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
+				tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+			}
+		
+			// Query the database
+			//
+			function queryDB(tx) {
+				tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
+			}
+		
+			// Query the success callback
+			//
+			function querySuccess(tx, results) {
+				// this will be empty since no rows were inserted.
+				alert("Insert ID = " + results.insertId);
+				// this will be 0 since it is a select statement
+				alert("Rows Affected = " + results.rowAffected);
+				// the number of rows returned by the select statement
+				alert("Insert ID = " + results.rows.length);
+			}
+		
+			// Transaction error callback
+			//
+			function errorCB(err) {
+				alert("Error processing SQL: "+err.code);
+			}
+		
+			// Transaction success callback
+			//
+			function successCB() {
+				var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+				db.transaction(queryDB, errorCB);
+			}
+		
+			// PhoneGap is ready
+			//
+			function onDeviceReady() {
+				var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+				db.transaction(populateDB, errorCB, successCB);
+			}
         </script>
 
 </head>
@@ -18,6 +66,11 @@
 <body>
 	<div id="logo">
     	<img src="images/UWSP_Logo.png" />
+        <a href="quadAcademics.html">Academic Quad</a>
+        <a href="quadAdministration.html">Administration Quad</a>
+        <a href="quadEast.html">East Quad</a>
+        <a href="quadNorth.html">North Quad</a>
+        <a href="quadSouth.html">South Quad</a>
     </div>
     <div id="navigation">
     	<a href="map.html" class="button">Campus Map</a>

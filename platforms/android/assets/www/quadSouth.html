@@ -20,10 +20,12 @@
 
 <script>
 document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceGo, false);
 
 function onDeviceReady() {
     $('img[usemap]').rwdImageMaps();
 	window.addEventListener("orientationchange", orientationChange, true);
+	orientationChange();
 	
 };
 </script>

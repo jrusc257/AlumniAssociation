@@ -38,7 +38,7 @@ body{
 	width:80px;
 }
 #navigation{
-	padding:20px;
+	padding:10px;
 	z-index:20;
 	position:fixed;
 	bottom:0;
@@ -56,14 +56,16 @@ body{
 	color:#652681;
 }
 #header{
-	padding:10px;
-	font-size:16px;
+	padding:6px;
+	font-size:14px;
 	text-align:center;
+	margin-bottom:0;
 }
 #image{
 	border-top:#652681 4px solid;
 	border-bottom:#652681 4px solid;
 	margin:10px 0;
+	max-height:90%;
 }
 .portrait #image{
 	width:100%;
@@ -86,14 +88,17 @@ img[usemap] {
 	max-width:100%;
 }
 #locInfo{
-	font-size:12px;
+	font-size:10px;
 }
 .landscape #content{
 	width:45%;
 	float:right;
 }
 #content, #navigation{
-	padding:15px;
+	padding:12px;
+}
+#content{
+	float:right;
 }
 #loading, #loading img{
 	width:80px;

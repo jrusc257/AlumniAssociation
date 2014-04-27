@@ -20,10 +20,12 @@
 
 <script>
 document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceGo, false);
 
 function onDeviceReady() {
     $('img[usemap]').rwdImageMaps();
 	window.addEventListener("orientationchange", orientationChange, true);
+	orientationChange();
 };
 </script>
 
@@ -37,7 +39,7 @@ function onDeviceReady() {
         <area shape="rect" coords="34,462,144,592" onClick="ajaxGet('Burroughs.html')">
         <area shape="rect" coords="145,494,282,589" onClick="ajaxGet('Knutzen.html')">
         <area shape="circle" coords="578,161,52" onClick="ajaxGet('Schmeekle.html')">
-        <area shape="rect" coords="326,231,424,314" onClick="ajaxGet('Waste.html')">
+        <area shape="rect" coords="326,231,424,314" onClick="ajaxGet('WasteCenter.html')">
       </map>
     </div>
     <div id="content">

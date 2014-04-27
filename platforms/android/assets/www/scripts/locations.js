@@ -67,20 +67,74 @@ function goVideo(url){
 }
 function orientationChange(){
 	if($("#locInfo").hasClass("landscape")){
-		alert("width: " + screen.width + "\nheight: " + screen.height);
+		alert("width: " + window.width + "\nheight: " + window.height);
 		$("#locInfo").removeClass("landscape");
 		$("#locInfo").addClass("portrait");
 	}else{		
-		alert("width: " + screen.width + "\nheight: " + screen.height);
+		alert("width: " + window.width + "\nheight: " + window.height);
 		$("#locInfo").removeClass("portrait");
 		$("#locInfo").addClass("landscape");
 	}
 }
 function initOrientation(){
-	alert("init\nwidth: " + screen.width + "\nheight: " + screen.height);
+	alert("init\nwidth: " + window.width + "\nheight: " + window.height);
 	if(screen.height < screen.width){
 		$("#locInfo").addClass("landscape");
 	}else{
 		$("#locInfo").addClass("portrait");
 	}
+}
+
+
+
+
+//Begin Database Interaction Segment
+
+
+
+
+var db = "";
+		  
+function populateDB(tx) {
+	tx.executeSql('DROP TABLE IF EXISTS SoccerPlayer');
+	tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (Name TEXT NOT NULL, Club TEXT NOT NULL)');
+	tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Alexandre Pato", "AC Milan")');
+	tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Van Persie", "Arsenal")');
+}
+
+function queryDB(tx) {
+	tx.executeSql('SELECT * FROM SoccerPlayer', [], querySuccess, errorCB);
+}
+
+
+function querySuccess(tx,result){
+		var playerlist = document.getElementById("SoccerPlayerList");
+		var players = "";
+		alert("The show is on");
+		var len = result.rows.length;
+		for (var i=0; i<len; i++){
+			alert(result.rows.item(i).Name + result.rows.item(i).Club);
+			players = players + '<li><a href="#"><p class="record">'+result.rows.item(i).Name+'</p><p class="small">Club '+result.rows.item(i).Club+'</p></a></li>';
+			document.getElementById("database").innerHTML = players;
+			
+		}   
+
+		playerlist.innerHTML = players;
+		$("#SoccerPlayerList").listview("refresh");
+}
+
+
+function errorCB(err) {
+	console.log("Error processing SQL: "+err.code);
+}
+
+
+function successCB() {
+	db.transaction(queryDB, errorCB);
+}
+
+
+function onDeviceGo() {
+	db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+	db.transaction(populateDB, errorCB, successCB);
 }

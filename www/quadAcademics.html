@@ -17,7 +17,9 @@
     <script type="text/javascript" charset="utf-8" src="scripts/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="scripts/jquery.rwdImageMaps.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="scripts/locations.js"></script>
-
+<script>
+	document.addEventListener("deviceready", onDeviceGo, false);
+</script>
 <script>
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -35,7 +37,7 @@ function onDeviceReady() {
       <area shape="rect" coords="2,2,153,95" onClick="ajaxGet('601.html')">
       <area shape="rect" coords="164,260,265,408" onClick="ajaxGet('CCC.html')">
         <area shape="rect" coords="274,308,375,437" onClick="ajaxGet('CPS.html')">
-        <area shape="rect" coords="389,266,654,457" onClick="ajaxGet('ScienceBldg.html')">
+        <area shape="rect" coords="389,266,654,457" onClick="ajaxGet('Science.html')">
         <area shape="rect" coords="330,458,581,558" onClick="ajaxGet('TNR.html')">
         <area shape="rect" coords="170,559,419,730" onClick="ajaxGet('NFAC.html')">
         <area shape="rect" coords="506,584,625,724" onClick="ajaxGet('LRC.html')">
@@ -50,5 +52,6 @@ function onDeviceReady() {
         <a onClick="geoRefresh()" class="button">Refresh</a>
     </div>
 </div>
+<div id="database"></div>
 </body>
 </html>
