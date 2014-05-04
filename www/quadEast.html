@@ -3,7 +3,7 @@
 <meta charset="utf-8">
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> 
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=low-dpi" /> 
 <title>UWSP Tour</title>
 
 <script type="text/javascript" src="phonegap.js"></script>
@@ -17,6 +17,7 @@
     <script type="text/javascript" charset="utf-8" src="scripts/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="scripts/jquery.rwdImageMaps.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="scripts/locations.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/checkin.js"></script>
 
 <script>
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -31,20 +32,20 @@ function onDeviceReady() {
 
 <div id="locInfo">
     <div id="header">East Quad</div>
-    <div id="image"><img src="images/East_Quad.jpg" width="332" height="656" border="0" usemap="#East" />
+    <div id="image"><img src="images/East_Quad.jpg" width="1000" height="750" border="0" usemap="#East" />
       <map name="East">
-        <area shape="rect" coords="39,16,297,86" onClick="ajaxGet('Suites.html')">
-        <area shape="rect" coords="46,114,147,255" onClick="ajaxGet('Roach.html')">
-        <area shape="rect" coords="160,237,246,331" onClick="ajaxGet('Allen.html')">
-        <area shape="rect" coords="41,311,135,438" onClick="ajaxGet('Smith.html')">
-        <area shape="rect" coords="32,466,197,599" onClick="ajaxGet('PSims.html')">
+        <area shape="rect" coords="187,17,473,149" onClick="ajaxGet('Suites.html')">
+        <area shape="poly" coords="212,180,212,322,300,324,300,242,421,244,416,182" onClick="ajaxGet('Roach.html')">
+        <area shape="rect" coords="325,309,583,448" onClick="ajaxGet('Allen.html')">
+        <area shape="poly" coords="293,408,299,460,405,468,400,545,189,544,191,414" onClick="ajaxGet('Smith.html')">
+        <area shape="rect" coords="170,550,372,733" onClick="ajaxGet('PSims.html')">
       </map>
-    </div>
+  </div>
     <div id="content">
         <p>click into buildings</p>
     </div>
     <div id="navigation">
-        <a href="index.html" class="button">Home</a>
+        <a href="index.html" class="button">Back</a>
         <a onClick="geoRefresh()" class="button">Refresh</a>
     </div>
 </div>

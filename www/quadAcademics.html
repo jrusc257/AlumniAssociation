@@ -17,6 +17,7 @@
     <script type="text/javascript" charset="utf-8" src="scripts/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="scripts/jquery.rwdImageMaps.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="scripts/locations.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/checkin.js"></script>
 <script>
 	document.addEventListener("deviceready", onDeviceGo, false);
 </script>
@@ -32,26 +33,26 @@ function onDeviceReady() {
 
 <div id="locInfo">
     <div id="header">Academic Buildings</div>
-    <div id="image"><img src="images/Academic_Buildings.jpg" width="694" height="750" border="0" usemap="#AcademicBuildings" />
+    <div id="image"><img src="images/Academic_Buildings.jpg" width="1000" height="750" border="0" usemap="#AcademicBuildings" />
       <map name="AcademicBuildings">
-      <area shape="rect" coords="2,2,153,95" onClick="ajaxGet('601.html')">
-      <area shape="rect" coords="164,260,265,408" onClick="ajaxGet('CCC.html')">
-        <area shape="rect" coords="274,308,375,437" onClick="ajaxGet('CPS.html')">
-        <area shape="rect" coords="389,266,654,457" onClick="ajaxGet('Science.html')">
-        <area shape="rect" coords="330,458,581,558" onClick="ajaxGet('TNR.html')">
-        <area shape="rect" coords="170,559,419,730" onClick="ajaxGet('NFAC.html')">
-        <area shape="rect" coords="506,584,625,724" onClick="ajaxGet('LRC.html')">
-        <area shape="rect" coords="225,17,652,226" onClick="ajaxGet('Science.html')">
+        <area shape="rect" coords="55,13,191,71" onClick="ajaxGet('601.html')">
+        <area shape="poly" coords="281,40,441,40,442,71,527,71,529,40,626,40,627,107,671,108,671,199,442,199,442,212,352,211,352,135,281,133,281,40" onClick="ajaxGet('HEC.html')">
+        <area shape="poly" coords="230,282,292,282,292,393,230,393" onClick="ajaxGet('CCC.html')">
+        <area shape="poly" coords="331,324,407,323,407,402,381,403,379,425,354,426,354,402,331,402" onClick="ajaxGet('CPS.html')">
+        <area shape="poly" coords="446,296,446,428,512,429,513,388,593,388,593,455,654,453,654,386,680,384,679,351,642,348,642,291,565,290,560,283,506,281,489,295" onClick="ajaxGet('Science.html')">
+        <area shape="poly" coords="222,599,223,716,422,716,422,675,441,647,441,588,417,588,417,573,363,574,324,599" onClick="ajaxGet('NFAC.html')">
+        <area shape="poly" coords="399,468,570,469,570,513,605,512,605,536,584,537,583,549,511,545,399,545" onClick="ajaxGet('TNR.html')">
+        <area shape="poly" coords="445,553,446,721,556,721,555,554" onClick="ajaxGet('Mural.html')">
+        <area shape="poly" coords="573,706,644,708,644,674,653,675,651,632,645,632,645,596,568,597,568,631,559,634,560,672,569,674" onClick="ajaxGet('LRC.html')">
       </map>
-    </div>
+  </div>
     <div id="content">
         <p>click into buildings</p>
     </div>
     <div id="navigation">
-        <a href="index.html" class="button">Home</a>
+        <a href="index.html" class="button">Back</a>
         <a onClick="geoRefresh()" class="button">Refresh</a>
     </div>
 </div>
-<div id="database"></div>
 </body>
 </html>

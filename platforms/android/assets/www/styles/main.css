@@ -16,14 +16,20 @@ body{
 	width:100%;
 	height:auto;
 }
+#content{
+	margin-bottom: 80px;
+	clear:both;
+}
 #map{
 	width:100%;
 }
-#map img{
-	width:100%;
+#map{
 	border-top:#652681 4px solid;
 	border-bottom:#652681 4px solid;
 	margin:20px 0;
+}
+#map img{
+	width:100%;
 }
 .button{
 	padding:10px;
@@ -37,6 +43,21 @@ body{
 	text-align:center;
 	width:80px;
 }
+.checkinButton{
+	position: absolute;
+	right: 5px;
+	padding:10px;
+	font-size:12px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color:#093;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+	width:80px;
+}
+	
 #navigation{
 	padding:10px;
 	z-index:20;
@@ -46,6 +67,9 @@ body{
 }
 #navigation a{
 	display:inline-block;
+	float:right;
+	margin-left:8px;
+	margin-bottom:3px;
 }
 .history{
 	text-align:center;
@@ -65,18 +89,17 @@ body{
 	border-top:#652681 4px solid;
 	border-bottom:#652681 4px solid;
 	margin:10px 0;
-	max-height:90%;
 }
 .portrait #image{
 	width:100%;
 	height:auto;
 }
-.landscape #image{
+/*.landscape #image{
 	float:left;
 	width:45%;
 	height:auto;
 	border-right:#652681 4px solid;
-}
+}*/
 #image img{
 	width:100%;
 	height:auto;
@@ -90,19 +113,37 @@ img[usemap] {
 #locInfo{
 	font-size:10px;
 }
-.landscape #content{
+/*.landscape #content{
 	width:45%;
 	float:right;
-}
+}*/
 #content, #navigation{
 	padding:12px;
-}
-#content{
-	float:right;
 }
 #loading, #loading img{
 	width:80px;
 	height:auto;
 	margin:0 auto;
 	margin-top: 15%;
+}
+
+#checkinList{
+	font-size:12px;
+	list-style:none;
+	margin-left:0;
+	padding-left:0;
+	line-height:22px;
+}
+.checkinYes{
+	float:right;
+	font-weight:bold;
+	color:#009900;
+	padding:0 7px;
+	background-color:#66FF00;
+}
+.checkinNo{
+	float:right;
+	font-weight:bold;
+	color:#C00;
+	padding:0 7px;
 }

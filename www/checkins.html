@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=low-dpi" />
+<title>UWSP Tour</title>
+<link type="text/css" rel="stylesheet" href="styles/main.css">
+
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" charset="utf-8" src="scripts/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="scripts/checkin.js"></script>
+
+</head>
+
+<body>
+	<div id="content">
+        <div class="button" onclick="clearAll()" style="width:120px;">Clear Check-Ins</div>
+        <ul id="checkinList">
+        	<li class="601">601 Devision Street: </li>
+            <li class="Allen">Allen Center: </li>
+            <li class="Baldwin">Baldwin Hall: </li>
+            <li class="Burroughs">Burroughs Hall: </li>
+            <li class="CAC">Communication Arts Center: </li>
+            <li class="CCC">Collins Classroom Center: </li>
+            <li class="ColemanField">Coleman Field: </li>
+            <li class="CPS">College of Professional Studies: </li>
+            <li class="Debot">Debot Dining Center: </li>
+            <li class="Delzell">Delzell Hall: </li>
+            <li class="DUC">Dreyfus University Center: </li>
+            <li class="GStein">George Stein Building: </li>
+            <li class="Hansen">Hansen Hall: </li>
+            <li class="HEC">Health Enhancement Center: </li>
+            <li class="Knutzen">Knutzen Hall: </li>
+            <li class="LakeJ">Lake Joanis: </li>
+            <li class="Roach">May Roach hall: </li>
+            <li class="McCartyField">McCarty Field: </li>            
+            <li class="Mural">Mural: </li>
+            <li class="Neale">Neale Hall: </li>
+            <li class="Nelson">Nelson Hall: </li>
+            <li class="NFAC">Noel Fine Arts Center: </li>
+            <li class="OldMain">Old Main: </li>
+            <li class="PSims">Pray Sims Hall: </li>
+            <li class="Schmeekle">Schmeekle Reserve: </li>
+            <li class="Science">Science Building: </li>
+            <li class="SServices">Student Services Building: </li>
+            <li class="Steiner">Steiner hall: </li>
+            <li class="Suites">The Suites @ 201: </li>
+            <li class="Thomson">Thomson Hall: </li>
+            <li class="TNR">Trainer Natural Resources Building: </li>
+            <li class="WasteCenter">Waste Center: </li>
+            <li class="Watson">Watson Hall: </li>
+            <li class="WoodLab">Wood Utilization Lab: </li>
+        </ul>
+    </div>
+    <div id="navigation">
+    	<a href="map.html" class="button">Campus Map</a>       
+        <a href="index.html" class="button">Back</a>
+        <a href="location.html" class="button">Start!</a> 
+    </div>
+    <script>
+		//showData("601")
+		showCheckins();
+    </script>
+</body>
+</html>

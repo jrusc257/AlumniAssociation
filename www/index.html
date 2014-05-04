@@ -4,7 +4,7 @@
 <meta charset="utf-8">
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=low-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=low-dpi" />
 <title>UWSP Tour</title>
 <link type="text/css" rel="stylesheet" href="styles/main.css">
 
@@ -13,52 +13,6 @@
 		
             app.initialize();
 			document.addEventListener("deviceready", onDeviceReady, false);
-		
-			// Populate the database 
-			//
-			function populateDB(tx) {
-				tx.executeSql('DROP TABLE IF EXISTS DEMO');
-				tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
-				tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
-				tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
-			}
-		
-			// Query the database
-			//
-			function queryDB(tx) {
-				tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
-			}
-		
-			// Query the success callback
-			//
-			function querySuccess(tx, results) {
-				// this will be empty since no rows were inserted.
-				alert("Insert ID = " + results.insertId);
-				// this will be 0 since it is a select statement
-				alert("Rows Affected = " + results.rowAffected);
-				// the number of rows returned by the select statement
-				alert("Insert ID = " + results.rows.length);
-			}
-		
-			// Transaction error callback
-			//
-			function errorCB(err) {
-				alert("Error processing SQL: "+err.code);
-			}
-		
-			// Transaction success callback
-			//
-			function successCB() {
-				var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
-				db.transaction(queryDB, errorCB);
-			}
-		
-			// PhoneGap is ready
-			//
-			function onDeviceReady() {
-				var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
-				db.transaction(populateDB, errorCB, successCB);
-			}
         </script>
 
 </head>
@@ -71,10 +25,12 @@
         <a href="quadEast.html">East Quad</a>
         <a href="quadNorth.html">North Quad</a>
         <a href="quadSouth.html">South Quad</a>
+        <a href="Schmeeckle.html">Schmeeckle</a>
     </div>
     <div id="navigation">
-    	<a href="map.html" class="button">Campus Map</a>
-        <a href="location.html" class="button">Location</a>
+    	<a href="map.html" class="button">Campus Map</a>       
+        <a href="checkins.html" class="button">Checkins</a>
+        <a href="location.html" class="button">Start!</a> 
     </div>
     
 </body>
